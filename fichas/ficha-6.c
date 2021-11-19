@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
-#define VECTOR_SIZE 20
-#define DOUBLE_VECTOR_SIZE 40
+#define VECTOR_LIMIT 20
+#define DOUBLE_VECTOR_LIMIT 40
 
 void switchVariableValue(int *a, int *b) {
     int temp = *a;
@@ -16,9 +16,13 @@ void readString(char str[], char question[]) {
 }
 
 void concatenateStrings(char str1[], char str2[]) {
-    int str1Len = strlen(str1);
-    for (int i = 0; i < strlen(str2); i++) {
-        str1[str1Len + i] = str2[i];
+    while ((*str1) != '\0') {
+        str1++;
+    }
+    while ((*str2) != '\0') {
+        *str1 = *str2;
+        str1++;
+        str2++;
     }
 }
 
@@ -119,19 +123,19 @@ void main() {
     // printf("a = %d, b = %d\n", a, b);
 
     // Exercicio 2
-    // char c[VECTOR_SIZE];
+    // char c[VECTOR_LIMIT];
     // readString(c, "Introduza alguns caracteres: ");
     // printf("Os dois primeiros caracteres são: %c%c", c[0], c[1]);
 
     // Exercicio 3
-    // char str1[VECTOR_SIZE], str2[VECTOR_SIZE];
+    // char str1[VECTOR_LIMIT], str2[VECTOR_LIMIT];
     // readString(str1, "Introduza uma string: ");
     // readString(str2, "Introduza outra string: ");
     // concatenateStrings(str1, str2);
-    // printf("%s", str1);
+    // puts(str1);
 
     // Exercicio 4
-    // int n, v1[VECTOR_SIZE], v2[VECTOR_SIZE], v3[DOUBLE_VECTOR_SIZE];
+    // int n, v1[VECTOR_LIMIT], v2[VECTOR_LIMIT], v3[DOUBLE_VECTOR_LIMIT];
     // readInt(&n, "Introduza o tamanho dos vectores: ");
     // readVector(v1, n);
     // readVector(v2, n);
@@ -139,7 +143,7 @@ void main() {
     // displayVector(v3, n * 2);
 
     // Exercicio 5
-    int v1[VECTOR_SIZE], n;
+    int v1[VECTOR_LIMIT], n;
     readInt(&n, "Introduza o tamanho do vector: ");
 
     // a
@@ -180,11 +184,11 @@ void main() {
         bigger, smaller);
 
     // i
-    int v2[VECTOR_SIZE];
+    int v2[VECTOR_LIMIT];
     duplicateVector(v1, v2, n);
 
     // j
-    int v3[VECTOR_SIZE];
+    int v3[VECTOR_LIMIT];
     intercalateVectors(v1, v2, v3, n);
     displayVector(v3, n * 2);
 }
