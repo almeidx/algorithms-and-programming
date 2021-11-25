@@ -16,10 +16,10 @@ void readString(char str[], char question[]) {
 }
 
 void concatenateStrings(char str1[], char str2[]) {
-  while ((*str1) != '\0') {
+  while (*str1 != '\0') {
     str1++;
   }
-  while ((*str2) != '\0') {
+  while (*str2 != '\0') {
     *str1 = *str2;
     str1++;
     str2++;
@@ -34,16 +34,16 @@ void readInt(int *number, char question[]) {
 void readVector(int vector[], int size) {
   for (int i = 0; i < size; i++) {
     printf("Introduza o %dº elemento do vector: ", i + 1);
-    scanf("%d", &vector[i]);
+    scanf("%d", vector + i);
   }
 }
 
 void intercalateVectors(int v1[], int v2[], int v3[], int size) {
   int j = 0;
   for (int i = 0; i < size; i++) {
-    v3[j] = v1[i];
+    *(v3 + j) = *(v1 + i);
     j++;
-    v3[j] = v2[size - i - 1];
+    *(v3 + j) = *(v2 + size - i - 1);
     j++;
   }
 }
@@ -51,7 +51,7 @@ void intercalateVectors(int v1[], int v2[], int v3[], int size) {
 void displayVector(int v[], int size) {
   printf("{ ");
   for (int i = 0; i < size; i++) {
-    printf("%d ", v[i]);
+    printf("%d ", *(v + i));
   }
   printf("}\n");
 }
@@ -65,10 +65,10 @@ void displayVectorReverse(int v[], int size) {
 }
 
 void getMaxValue(int v[], int size, int *max) {
-  *max = v[0];
+  *max = *v;
   for (int i = 1; i < size; i++) {
     if (v[i] > *max) {
-      *max = v[i];
+      *max = *(v + i);
     }
   }
 }
@@ -76,8 +76,8 @@ void getMaxValue(int v[], int size, int *max) {
 void getMinValue(int v[], int size, int *min) {
   *min = v[0];
   for (int i = 1; i < size; i++) {
-    if (v[i] < *min) {
-      *min = v[i];
+    if (*(v + i) < *min) {
+      *min = *(v + i);
     }
   }
 }
@@ -85,7 +85,7 @@ void getMinValue(int v[], int size, int *min) {
 void getSum(int v[], int size, int *sum) {
   *sum = 0;
   for (int i = 0; i < size; i++) {
-    *sum += v[i];
+    *sum += *(v + i);
   }
 }
 
@@ -101,9 +101,9 @@ void getMedianBounds(int v[], int size, int *smaller, int *bigger) {
   *smaller = 0;
   *bigger = 0;
   for (int i = 0; i < size; i++) {
-    if (v[i] > median) {
+    if (*(v + i) > median) {
       *bigger += 1;
-    } else if (v[i] < median) {
+    } else if (*(v + i) < median) {
       *smaller += 1;
     }
   }
