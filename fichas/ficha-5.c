@@ -190,7 +190,7 @@ void displaySumOfTwoMatrix(int m1[][VECTOR_SIZE], int m2[][VECTOR_SIZE],
 }
 
 void main() {
-  // Exercicio 1
+  // Exercício 1
 
   // printf("isDigit('1'): %d\n", isDigit('1'));
   // printf("isAlpha('a'): %d\n", isAlpha('a'));
@@ -198,14 +198,14 @@ void main() {
   // printf("toLower('E'): %c\n", toLower('E'));
   // printf("toUpper('a'): %c\n", toUpper('a'));
 
-  // Exercicio 2
+  // Exercício 2
 
   // printf("resto(10, 3): %d\n", resto(10, 3));
   // printf("impar(10): %d\n", impar(10));
   // printf("perfeito(6): %d\n", perfeito(6));
   // printf("primo(7): %d\n", primo(7));
 
-  // Exercicio 3
+  // Exercício 3
 
   // int a, b, reduzidos = 0, abundantes = 0, perfeitos = 0;
 
@@ -231,13 +231,13 @@ void main() {
   //     "Quantidadades:\n - perfeitos: %d\n - abundantes: %d\n - reduzidos:
   //     %d", perfeitos, abundantes, reduzidos);
 
-  // Exercicio 4
+  // Exercício 4
 
   // int lado;
   // askForInt(&lado, "Introduza o lado: ");
   // printf("O volume é: %d\n", calculateVolume(lado));
 
-  // Exercicio 5
+  // Exercício 5
 
   // int n1, n2;
   // askForInt(&n1, "Introduza o primeiro nº: ");
@@ -245,7 +245,7 @@ void main() {
 
   // biggerNumber(n1, n2);
 
-  // Exercicio 6
+  // Exercício 6
 
   // // a
   // int v[VECTOR_SIZE], size;
@@ -262,7 +262,7 @@ void main() {
   // biggestComponentPosition,
   //        v[biggestComponentPosition]);
 
-  // Exercicio 7
+  // Exercício 7
 
   // int v1[VECTOR_SIZE], v2[VECTOR_SIZE], size;
   // askForInt(&size, "Introduza o tamanho dos vetores (1-20): ");
@@ -272,7 +272,7 @@ void main() {
   // printf("O produto interno dos vectores introduzidos é %d",
   //        calculateInternalProductOfVectors(v1, v2, size));
 
-  // Exercicio 8
+  // Exercício 8
   // int v1[VECTOR_SIZE], size;
   // askForInt(&size, "Introduza o tamanho do vetor (1-20): ");
   // askForVector(v1, size);
@@ -288,7 +288,7 @@ void main() {
   // switchPlaces(v1, p, q);
   // displayVector(v1, size);
 
-  // Exercicio 9
+  // Exercício 9
   // int m[VECTOR_SIZE][VECTOR_SIZE], size;
   // askForInt(&size, "Introduza o tamanho da matriz (1-20): ");
 

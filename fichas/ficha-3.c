@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-  // Exercicio 1
+  // Exercício 1
 
   // int num;
   // printf("Introduza um numero natural");
@@ -13,7 +13,7 @@ int main() {
   //     printf("%d\n", mult);
   // } while (mult < 100);
 
-  // Exercicio 2
+  // Exercício 2
 
   // int ni, nf;
 
@@ -27,7 +27,7 @@ int main() {
   //     n += 2;
   // } while (n < nf);
 
-  // Exercicio 3
+  // Exercício 3
 
   // int n;
 
@@ -44,7 +44,7 @@ int main() {
 
   // printf("total %d", total);
 
-  // Exercicio 4
+  // Exercício 4
 
   // int n;
   // do {
@@ -52,7 +52,7 @@ int main() {
   //     scanf("%d", &n);
   // } while (n < 0 || n > 9);
 
-  // Exercicio 5
+  // Exercício 5
 
   // float n;
   // do {
@@ -60,7 +60,7 @@ int main() {
   //     scanf("%f", &n);
   // } while (n < 10.0f || n > 15.5f);
 
-  // Exercicio 6
+  // Exercício 6
 
   // int n, even = 0, uneven = 0;
 
@@ -77,7 +77,7 @@ int main() {
 
   // printf("Introduziu %d nº pares e %d impares", even, uneven);
 
-  // Exercicio 7
+  // Exercício 7
 
   // int n, m;
 

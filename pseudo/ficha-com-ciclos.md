@@ -1,4 +1,4 @@
-# Exercicio 1
+# Exercício 1
 
 ## Variáveis
 
@@ -28,7 +28,7 @@ Inicio
 Fim
 ```
 
-# Exercicio 2
+# Exercício 2
 
 ## Variáveis
 
@@ -60,7 +60,7 @@ Inicio
 Fim
 ```
 
-# Exercicio 3
+# Exercício 3
 
 ## Variáveis
 
@@ -86,7 +86,7 @@ Inicio
 Fim
 ```
 
-# Exercicio 5
+# Exercício 5
 
 ## Variáveis
 

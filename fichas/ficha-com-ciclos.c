@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void main() {
-  // Exercicio 4
+  // Exercício 4
 
   // int n;
   // printf("Introduza o número.");
@@ -10,11 +10,12 @@ void main() {
   //     printf("%d x %d = %d\n", n, i, n * i);
   // }
 
-  // Exercicio 6
+  // Exercício 6
 
   int max, min, p, sum = 0;
   printf("Introduza o minimo e o maximo.");
   scanf("%d%d", &min, &max);
+
   do {
     p += min;
     sum += p;

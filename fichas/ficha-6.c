@@ -116,25 +116,25 @@ void duplicateVector(int v1[], int v2[], int size) {
 }
 
 void main() {
-  // Exercicio 1
+  // Exercício 1
   // int a = 1, b = 2;
   // printf("a = %d, b = %d\n", a, b);
   // switchVariableValue(&a, &b);
   // printf("a = %d, b = %d\n", a, b);
 
-  // Exercicio 2
+  // Exercício 2
   // char c[VECTOR_LIMIT];
   // readString(c, "Introduza alguns caracteres: ");
   // printf("Os dois primeiros caracteres são: %c%c", c[0], c[1]);
 
-  // Exercicio 3
+  // Exercício 3
   // char str1[VECTOR_LIMIT], str2[VECTOR_LIMIT];
   // readString(str1, "Introduza uma string: ");
   // readString(str2, "Introduza outra string: ");
   // concatenateStrings(str1, str2);
   // puts(str1);
 
-  // Exercicio 4
+  // Exercício 4
   // int n, v1[VECTOR_LIMIT], v2[VECTOR_LIMIT], v3[DOUBLE_VECTOR_LIMIT];
   // readInt(&n, "Introduza o tamanho dos vectores: ");
   // readVector(v1, n);
@@ -142,7 +142,7 @@ void main() {
   // intercalateVectors(v1, v2, v3, n);
   // displayVector(v3, n * 2);
 
-  // Exercicio 5
+  // Exercício 5
   int v1[VECTOR_LIMIT], n;
   readInt(&n, "Introduza o tamanho do vector: ");
 

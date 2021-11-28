@@ -66,7 +66,7 @@ void calculateMatrixProduct(int *matrix1, int *matrix2, int *matrix3, int rows,
 }
 
 void main() {
-  // Exercicio 1
+  // Exercício 1
 
   // int rows, columns;
   // readInt(&rows, "Digite o numero de linhas: ");
@@ -92,7 +92,7 @@ void main() {
   // printf("A soma da diagonal principal é %d.\n",
   //        sumMainDiagonal(matrix, rows, columns));
 
-  // Exercicio 2
+  // Exercício 2
   int rows, columns;
   readInt(&rows, "Digite o numero de linhas: ");
   readInt(&columns, "Digite o numero de colunas: ");

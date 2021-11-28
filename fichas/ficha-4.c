@@ -3,7 +3,7 @@
 #include <unistd.h>
 
 int main() {
-  // Exercicio 1
+  // Exercício 1
 
   // int n;
 
@@ -14,7 +14,7 @@ int main() {
   //     printf("%d x %d = %d\n", n, i, n * i);
   // }
 
-  // Exercicio 2
+  // Exercício 2
 
   // for (int n = 2; n <= 10; n++) {
   //     for (int i = 1; i <= 10; i++) {
@@ -24,7 +24,7 @@ int main() {
   //     sleep(2);
   // }
 
-  // Exercicio 3
+  // Exercício 3
 
   // int n;
 
@@ -35,7 +35,7 @@ int main() {
   //     printf("%d / %d = %d\n", n, i, n / i);
   // }
 
-  // Exercicio 4
+  // Exercício 4
 
   // int sum = 0;
 
@@ -51,7 +51,7 @@ int main() {
 
   // printf("Σ: %d", sum);
 
-  // Exercicio 5
+  // Exercício 5
 
   // int sum = 0, n;
 
@@ -70,7 +70,7 @@ int main() {
 
   // printf("Σ: %d", sum);
 
-  // Exercicio 6
+  // Exercício 6
 
   // int sum = 0, n;
 
@@ -84,7 +84,7 @@ int main() {
 
   // printf("Σ: %d\n", sum);
 
-  // Exercicio 7
+  // Exercício 7
 
   // double sum = 1.0;
   // short mult = -1.0;
@@ -100,7 +100,7 @@ int main() {
 
   // printf("Σ: %.4f\n", sum);
 
-  // Exercicio 8
+  // Exercício 8
 
   // int branches;
 
@@ -115,7 +115,7 @@ int main() {
   //     printf("\n");
   // }
 
-  // Exercicio 9 - unfinished
+  // Exercício 9 - unfinished
 
   // int branches;
 
@@ -135,7 +135,7 @@ int main() {
   //     printf("\n");
   // }
 
-  // Exercicio 10
+  // Exercício 10
 
   // float initialCapital, interest;
   // int years;
@@ -153,7 +153,7 @@ int main() {
   //        initialCapital * pow(1 + interest, years - 1) +
   //            interest * initialCapital * pow(1 + interest, years - 1));
 
-  // Exercicio 11
+  // Exercício 11
 
   // float n;
   // int p;
@@ -165,7 +165,7 @@ int main() {
 
   // printf("%.2g^%d = %.2g\n", n, p, pow(n, p));
 
-  // Exercicio 12 - a
+  // Exercício 12 - a
 
   // int n, num, sum = 0;
   // do {
@@ -181,7 +181,7 @@ int main() {
 
   // printf("A média dos %d valores introduzidos é %d", n, (int)(sum / n));
 
-  // Exercicio 12 - b
+  // Exercício 12 - b
 
   // int n = 0;
   // float num, sum = 0.0f;
@@ -197,7 +197,7 @@ int main() {
 
   // printf("A média dos %d valores introduzidos é %.2f", n, sum / n);
 
-  // Exercicio 13
+  // Exercício 13
 
   // int n, guess;
 
@@ -220,7 +220,7 @@ int main() {
 
   // printf("ESTÁ CERTA!!!");
 
-  // Exercicio 14
+  // Exercício 14
 
   // int n, guess, attempts = 0;
 
@@ -248,7 +248,7 @@ int main() {
 
   // printf("ESTÁ CERTA!!! Nº de tentativas: ", attempts);
 
-  // Exercicio 15
+  // Exercício 15
 
   /*
       a = ANO MOD 19

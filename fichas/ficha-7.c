@@ -112,7 +112,7 @@ void removeBookByName(book *b, int n, char name[]) {
 }
 
 void main() {
-  // Exercicio 1
+  // Exercício 1
   // point p1, p2;
   // readPoint(&p1);
   // displayPoint(p1);
@@ -123,7 +123,7 @@ void main() {
   // printf("A área do retângulo é: %d\n",
   //        getRectangleAreaUsingDiagonal(p1, p2));
 
-  // Exercicio 2
+  // Exercício 2
   // fraction f1, f2, f3;
   // short cont = 1;
   // char op;
@@ -159,7 +159,7 @@ void main() {
   //     puts("Operação inválida!");
   // }
 
-  // Exercicio 3
+  // Exercício 3
   // student students[VECTOR_LIMIT];
   // short n, studentNumber;
   // readInt(&n, "Introduza o número de estudantes: ");
@@ -177,7 +177,7 @@ void main() {
   //     }
   // }
 
-  // Exercicio 4
+  // Exercício 4
   // book books[VECTOR_LIMIT];
   // int n;
   // readInt(&n, "Introduza o número de livros que deseja introduzir: ");
