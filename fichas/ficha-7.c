@@ -1,3 +1,4 @@
+#include <locale.h>
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
@@ -20,7 +21,7 @@ typedef struct Student {
 
 typedef struct Book {
   char title[31], author[31], area[21];
-  int year;
+  int year, occupied;
 } book;
 
 void readPoint(point *p) {
@@ -90,6 +91,7 @@ void readBook(book *b) {
   readString(b->author, "Introduza o autor do livro: ");
   readString(b->area, "Introduza a área do livro: ");
   readInt(&b->year, "Introduza o ano de publicação: ");
+  b->occupied = 1;
 }
 
 void displayBook(book b) {
@@ -104,14 +106,12 @@ void removeBookByName(book *b, int n, char name[]) {
   while (strcmp(b[i].title, name) != 0) {
     i++;
   }
-  if (i < n) {
-    for (int j = i; j < n - 1; j++) {
-      b[j] = b[j + 1];
-    }
-  }
+  b[i].occupied = 0;
 }
 
 void main() {
+  setlocale(LC_ALL, "Portuguese");
+
   // Exercício 1
   // point p1, p2;
   // readPoint(&p1);
@@ -178,23 +178,23 @@ void main() {
   // }
 
   // Exercício 4
-  // book books[VECTOR_LIMIT];
-  // int n;
-  // readInt(&n, "Introduza o número de livros que deseja introduzir: ");
+  book books[VECTOR_LIMIT];
+  int n;
+  readInt(&n, "Introduza o número de livros que deseja introduzir: ");
 
-  // for (int i = 0; i < n; i++) {
-  //     readBook(&books[i]);
-  // }
+  for (int i = 0; i < n; i++) {
+    readBook(&books[i]);
+  }
 
-  // for (int i = 0; i < n; i++) {
-  //     displayBook(books[i]);
-  // }
+  for (int i = 0; i < n; i++) {
+    displayBook(books[i]);
+  }
 
-  // char name[STRING_LIMIT];
-  // readString(name, "Introduza o título do livro que deseja remover: ");
-  // removeBookByName(books, n, name);
+  char name[31];
+  readString(name, "Introduza o título do livro que deseja remover: ");
+  removeBookByName(books, n, name);
 
-  // for (int i = 0; i < n; i++) {
-  //     displayBook(books[i]);
-  // }
+  for (int i = 0; i < n; i++) {
+    displayBook(books[i]);
+  }
 }
