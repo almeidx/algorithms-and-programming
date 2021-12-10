@@ -1,5 +1,11 @@
+#include <locale.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+typedef struct Party {
+  char name[51];
+  int votes, places;
+} party;
 
 void readInt(int *number, char msg[]) {
   printf("%s", msg);
@@ -65,7 +71,51 @@ void calculateMatrixProduct(int *matrix1, int *matrix2, int *matrix3, int rows,
   }
 }
 
+party *allocateParties(int n) { return (party *)malloc(n * sizeof(party)); }
+
+void readAllParties(party *partyVector, int n) {
+  for (int i = 0; i < n; i++) {
+    printf("Introduza o nome do partido: ");
+    gets(partyVector->name);
+    fseek(stdin, 0, 2);
+    printf("Introduza o número de votos: ");
+    scanf("%d", &partyVector->votes);
+    partyVector->places = 0;
+    partyVector++;
+  }
+}
+
+int getMaxPosition(int *q, party *L, int n) {
+  int pos = 0;
+  for (int i = 1; i < n; i++) {
+    if (q[i] > q[pos] || (q[i] == q[pos] && L[i].places < L[pos].places)) {
+      pos = i;
+    }
+  }
+  return pos;
+}
+
+void assignPlaces(party *partyVector, int n, int numberOfMandates) {
+  int i, currentPosition = 0, nextPartyPosition,
+         *queue = (int *)malloc(n * sizeof(int));
+
+  while (currentPosition < numberOfMandates) {
+    for (i = 0; i < n; i++) {
+      queue[i] = partyVector[i].votes / (1 + partyVector[i].places);
+    }
+
+    nextPartyPosition = getMaxPosition(queue, partyVector, n);
+
+    partyVector[nextPartyPosition].places++;
+    currentPosition++;
+  }
+
+  free(queue);
+}
+
 void main() {
+  setlocale(LC_ALL, "Portuguese");
+
   // Exercício 1
 
   // int rows, columns;
@@ -93,18 +143,36 @@ void main() {
   //        sumMainDiagonal(matrix, rows, columns));
 
   // Exercício 2
-  int rows, columns;
-  readInt(&rows, "Digite o numero de linhas: ");
-  readInt(&columns, "Digite o numero de colunas: ");
+  // int rows, columns;
+  // readInt(&rows, "Digite o numero de linhas: ");
+  // readInt(&columns, "Digite o numero de colunas: ");
 
-  int *matrix1 = allocateMatrix(rows, columns);
-  int *matrix2 = allocateMatrix(rows, columns);
-  int *matrix3 = allocateMatrix(rows, columns);
+  // int *matrix1 = allocateMatrix(rows, columns);
+  // int *matrix2 = allocateMatrix(rows, columns);
+  // int *matrix3 = allocateMatrix(rows, columns);
 
-  readMatrixLineByLine(matrix1, rows, columns);
-  readMatrixLineByLine(matrix2, rows, columns);
+  // readMatrixLineByLine(matrix1, rows, columns);
+  // readMatrixLineByLine(matrix2, rows, columns);
 
-  calculateMatrixProduct(matrix1, matrix2, matrix3, rows, columns);
+  // calculateMatrixProduct(matrix1, matrix2, matrix3, rows, columns);
 
-  displayMatrix(matrix3, rows, columns);
+  // displayMatrix(matrix3, rows, columns);
+
+  // Exercício 3
+
+  // int n, mandatos;
+  // party *partyVector = allocateParties(n);
+
+  // readInt(&n, "Introduza o número de partidos: ");
+  // readAllParties(partyVector, n);
+  // readInt(&mandatos, "Introduza o número de lugares a atribuir: ");
+
+  // assignPlaces(partyVector, n, mandatos);
+
+  // for (int i = 0; i < n; i++) {
+  //   printf("Partido %s recebe %d lugares\n", partyVector[i].name,
+  //          partyVector[i].places);
+  // }
+
+  // free(partyVector);
 }
