@@ -3,7 +3,7 @@
 #include <string.h>
 
 #define STRING_LIMIT 100
-#define INPUT_FILENAME "ficha_9.txt"
+#define INPUT_FILENAME "ficha_09.txt"
 
 void readString(char *string, char *msg) {
   printf(msg);
