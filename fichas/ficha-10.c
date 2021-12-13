@@ -133,12 +133,11 @@ void main() {
 
   // Exercício 3
 
-  // int n, p;
-  // readInt(&n, "Introduza uma base: ");
-  // readInt(&p, "Introduza um expoente: ");
+  int n, p;
+  readInt(&n, "Introduza uma base: ");
+  readInt(&p, "Introduza um expoente: ");
 
-  // printf("O somatório de i = %d de %d^%d = %d\n", n, n, p,
-  //        recursivePower(n, p));
+  printf("%d^%d = %d\n", n, p, recursivePower(n, p));
 
   // Exercício 4
 
@@ -176,40 +175,41 @@ void main() {
 
   // Exercício 6
 
-  int n, res;
-  double elapsedTime;
-  readInt(&n, "Introduza um número: ");
+  // int n, res;
+  // double elapsedTime;
+  // readInt(&n, "Introduza um número: ");
 
-  // a
-  gettimeofday(&t1, NULL);
-  res = recursiveFibonacci(n);
-  gettimeofday(&t2, NULL);
+  // // a
+  // gettimeofday(&t1, NULL);
+  // res = recursiveFibonacci(n);
+  // gettimeofday(&t2, NULL);
 
-  elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0;
-  elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0;
+  // elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0;
+  // elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0;
 
-  printf("[recursive: %.9f] O fibonacci de %d é %d\n", elapsedTime, n, res);
+  // printf("[recursive: %.9f] O fibonacci de %d é %d\n", elapsedTime, n, res);
 
-  // b
-  gettimeofday(&t1, NULL);
-  res = iterativeFibonacci(n);
-  gettimeofday(&t2, NULL);
+  // // b
+  // gettimeofday(&t1, NULL);
+  // res = iterativeFibonacci(n);
+  // gettimeofday(&t2, NULL);
 
-  elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0;
-  elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0;
+  // elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0;
+  // elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0;
 
-  printf("[iterative: %.9f] O fibonacci de %d é %d\n", elapsedTime, n, res);
+  // printf("[iterative: %.9f] O fibonacci de %d é %d\n", elapsedTime, n, res);
 
-  // c
-  int cache[FIBONACCI_CACHE_SIZE] = {0};
+  // // c
+  // int cache[FIBONACCI_CACHE_SIZE] = {0};
 
-  gettimeofday(&t1, NULL);
-  res = recursiveFibonacciWithCache(n, cache);
-  gettimeofday(&t2, NULL);
+  // gettimeofday(&t1, NULL);
+  // res = recursiveFibonacciWithCache(n, cache);
+  // gettimeofday(&t2, NULL);
 
-  elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0;
-  elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0;
+  // elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0;
+  // elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0;
 
-  printf("[recursive w/ cache: %.9f] O fibonacci de %d é %d\n", elapsedTime, n,
-         res);
+  // printf("[recursive w/ cache: %.9f] O fibonacci de %d é %d\n", elapsedTime,
+  // n,
+  //        res);
 }
