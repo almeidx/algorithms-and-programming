@@ -1,5 +1,6 @@
 #include <locale.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <sys/time.h>
 #include <time.h>
 
@@ -114,6 +115,17 @@ int recursiveFibonacciWithCache(int n, int *cache) {
   return cache[n];
 }
 
+long fibonacciPro(int n, long cache[]) {
+  if (n == 0 || n == 1) {
+    cache[n] = n;
+  } else {
+    if (cache[n - 1] == -1) cache[n - 1] = fibonacciPro(n - 1, cache);
+    if (cache[n - 2] == -1) cache[n - 2] = fibonacciPro(n - 2, cache);
+    cache[n] = cache[n - 1] + cache[n - 2];
+  }
+  return cache[n];
+}
+
 void main() {
   setlocale(LC_ALL, "Portuguese");
 
@@ -133,11 +145,11 @@ void main() {
 
   // Exercício 3
 
-  int n, p;
-  readInt(&n, "Introduza uma base: ");
-  readInt(&p, "Introduza um expoente: ");
+  // int n, p;
+  // readInt(&n, "Introduza uma base: ");
+  // readInt(&p, "Introduza um expoente: ");
 
-  printf("%d^%d = %d\n", n, p, recursivePower(n, p));
+  // printf("%d^%d = %d\n", n, p, recursivePower(n, p));
 
   // Exercício 4
 
@@ -175,9 +187,9 @@ void main() {
 
   // Exercício 6
 
-  // int n, res;
-  // double elapsedTime;
-  // readInt(&n, "Introduza um número: ");
+  int n, res;
+  double elapsedTime;
+  readInt(&n, "Introduza um número: ");
 
   // // a
   // gettimeofday(&t1, NULL);
@@ -199,7 +211,7 @@ void main() {
 
   // printf("[iterative: %.9f] O fibonacci de %d é %d\n", elapsedTime, n, res);
 
-  // // c
+  // c
   // int cache[FIBONACCI_CACHE_SIZE] = {0};
 
   // gettimeofday(&t1, NULL);
@@ -212,4 +224,19 @@ void main() {
   // printf("[recursive w/ cache: %.9f] O fibonacci de %d é %d\n", elapsedTime,
   // n,
   //        res);
+
+  // pro
+  long *cache2 = (long *)malloc(n * sizeof(long));
+  for (int i = 0; i < n; i++) {
+    *(cache2 + i) = -1;
+  }
+
+  gettimeofday(&t1, NULL);
+  res = fibonacciPro(n, cache2);
+  gettimeofday(&t2, NULL);
+
+  elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0;
+  elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0;
+
+  printf("[pro: %.9f] O fibonacci de %d é %d\n", elapsedTime, n, res);
 }

@@ -58,9 +58,71 @@
   entre sistemas diferentes.
 */
 
+#define BOOKS_FILE_NAME "books.txt"
+#define BOOKS_FILE_NAME_BINARY "books.dat"
+#define FILE_FAILURE "Ocorreu um erro ao abrir o ficheiro.\n"
+
 typedef struct Book {
   char isbn[26], title[31], author[31], area[21];
   short year;
+  short occupied;
 } BOOK;
+
+void writeBooksToFile(BOOK *v, int n) {
+  FILE *f = fopen(BOOKS_FILE_NAME, "w");
+  if (f == NULL) {
+    printf(FILE_FAILURE);
+    return;
+  }
+
+  for (int i = 0; i < n; i++) {
+    if (v->occupied) {
+      fprintf(f, "Título: %s\nAutor: %s\nÁrea: %s\nAno: %d\n\n", v->title,
+              v->author, v->area, v->year);
+    }
+    v++;
+  }
+
+  fclose(f);
+}
+
+void writeBooksToBinaryFile(BOOK *v, int n) {
+  FILE *f = fopen(BOOKS_FILE_NAME_BINARY, "wb");
+  if (f == NULL) {
+    printf(FILE_FAILURE);
+    return;
+  }
+
+  for (int i = 0; i < n; i++) {
+    if (v->occupied) {
+      fwrite(v, sizeof(BOOK), 1, f);
+    }
+    v++;
+  }
+
+  fclose(f);
+}
+
+void readBooksFromBinaryFile(BOOK *v, int n) {
+  FILE *f = fopen(BOOKS_FILE_NAME_BINARY, "rb");
+  if (f == NULL) {
+    printf(FILE_FAILURE);
+    return;
+  }
+
+  int i = 0;
+  while (!feof(f)) {
+    i++;
+    if (i <= n) {
+      fread(v, sizeof(BOOK), 1, f);
+      v++;
+    } else {
+      printf("Vector overflowed while reading file.\n");
+      break;
+    }
+  }
+
+  fclose(f);
+}
 
 void main() {}
